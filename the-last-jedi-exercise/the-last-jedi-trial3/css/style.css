@@ -1,0 +1,214 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: sans-serif;
+}
+
+body {
+    margin: 0;
+    background-color: lightgrey;
+}
+
+header {
+    display: flex;
+    background-color: grey;
+    color: white;
+}
+
+nav {
+    display: flex;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    padding: 1rem;
+}
+
+nav a:hover {
+    background-color: white;
+    color: grey;
+}
+
+.section--welcome {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5rem;
+    background-color: white;
+    background-image: url("../img/welcome.jpg");
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+
+.title {
+    font-size: 3rem;
+    color: white;
+}
+
+.subline {
+    font-size: 1.5rem;
+    color: grey;
+}
+
+.section--plot {
+    background-color: lightgrey;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2rem;
+    padding-top: 1rem;
+}
+
+.movie-intro {
+    display: flex;
+    justify-content: center;
+}
+
+.plot-image img {
+    width: 15rem;
+    height: auto;
+    margin-left: 2rem;
+}
+
+.plot-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 1rem;
+}
+
+.tagline {
+    font-size: 1.5rem;
+}
+
+.summary {
+    padding-top: 1rem;
+}
+
+.movie-actors {
+    display:flex;
+    align-items: flex-end;
+    justify-content: center;
+    height: 30rem;
+}
+
+.actor-images {
+    width: 12rem;
+    height: auto;
+    padding: 0.5rem;
+    border-radius: 50%;
+}
+
+.size-small {
+    width: 10%;
+    height: auto;
+}
+
+.size-medium {
+    width: 11%;
+    height: auto;
+}
+
+.size-large {
+    width: 12%;
+    height: auto;
+}
+
+.section--characters {
+    background-image: url("../img/rey-standing.jpg")
+}
+
+.critics-ratings {
+    display: flex;
+    justify-content: space-around;
+}
+
+.box {
+    width: 10rem;
+    background-color: grey;
+    margin: 0.5rem;
+}
+
+.imdb,
+.rottentomatoes,
+.metacritic {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.box--imdb {
+    height: 10rem;
+}
+
+.box--rottentomatoes {
+    height: 12rem;
+}
+
+.box--metacritic {
+    height: 11rem;
+}
+
+.cast-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.mark-hamill {
+    display: flex;
+    flex-direction: row;
+    padding-left: 1rem;
+}
+
+.mark-hamill-text {
+    padding: 1rem;
+}
+
+.cast-actors {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.cast-actors img {
+    padding: 0.7rem;
+    width: 8rem;
+    height: auto;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.content p {
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    text-align: center;
+}
+
+.image-gallery {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-image: url("../img/gallery.jpg");
+    color: white;
+    height: 20rem;
+}
+
+.section--content {
+    max-width: 800px;
+    margin: auto;
+}
+

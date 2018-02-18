@@ -1,0 +1,328 @@
+/*
+WARNING: Read before scrolling further
+1) there are many paths leading to the same result, especially in webdevelopment. 
+This is just one of them and it might not be the best one. Take this only as one 
+possibility of how the problem could have been solved. Don't rewrite your code 
+to match this one if yours works.
+2) Although the entire solution is opened to you at once, if you are viewing this 
+only to find a solution for a problem that you were not able to solve yourself, 
+try to only scroll to that particular section and not miss the opportunity of
+practicing by doing all the other sections yourself.
+Real CSS stylesheets are seldom this spread-out.
+*/
+
+
+
+
+
+
+
+
+
+/* GENERAL DOCUMENT RULES */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: sans-serif;
+}
+
+body {
+    margin: 0;
+}
+
+
+
+
+
+
+
+
+
+
+/* NAVIGATION */
+nav.top {
+    background: #666666;
+    color: #ffffff;
+    display: flex;
+    justify-content: flex-start;
+}
+
+nav.top a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 0.5em;
+}
+
+
+
+
+
+
+
+
+
+
+/* RULES FOR EVERY SECTION */
+section {
+    background-color: #e0e0e0;
+    border-bottom: 1px solid #b7b7b7;
+    overflow: auto; /* this solves some problems with headline margins overflowing the sections */
+    padding: 1em;
+}
+
+section > h2 {
+    text-align: center;
+    font-size: 2em;
+    font-weight: normal;
+    margin: 0 0 0.5em;
+}
+
+section > div {
+    width: 50em; /* here is the 800px rule. Every <section> has this <div> inside as it's immediate child. */
+    margin: 0 auto; /* simple centering the <div> horizontally within the <section> */
+}
+
+
+
+
+
+
+
+
+
+/* WELCOME SECTION */
+section.welcome {
+    background: transparent url('../img/welcome.jpg') center center/cover no-repeat scroll;
+}
+
+section.welcome > div {
+    display: flex;
+    flex-direction: column;
+    padding: 4em; /* this is the only rule that sets the section's size, setting height directly is also a good choice */
+    align-items: center;
+    justify-content: center;
+}
+
+section.welcome h1 {
+    font-size: 4em;
+    font-weight: normal;
+    margin: 0;
+    color: #ffffff;
+}
+
+section.welcome .subtitle {
+    font-size: 2em;
+    opacity: 0.7;
+    color: #dddddd;
+}
+
+
+
+
+
+
+
+
+
+
+/* PLOT SECTION */
+section.plot > div {
+    display: flex;
+    padding: 1em 0;
+}
+
+section.plot .poster {
+    height: 20em;
+    margin-right: 1em;
+}
+
+section.plot .tagline {
+    font-size: 1.5em;   
+}
+
+section.plot p {
+    font-size: 1.2em;
+    line-height: 1.5em; /* I like to do this, adds readability in my oppinion */
+}
+
+
+
+
+
+
+
+
+
+
+/* CHARACTERS SECTION */
+section.characters {
+    min-height: 30em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: transparent url('../img/rey-standing.jpg') center center/cover no-repeat scroll;
+}
+
+section.characters > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.6em;
+}
+
+section.characters > div img {
+    margin: 0 0.25em;
+    height: 8em; /* I have chosen relative units to set the height of the images. It is always (8 * font size)
+                    so in the following rules I just manipulate the font size and they resize. */
+    width: auto;
+    border-radius: 50%; /* easiest for circles */
+}
+
+section.characters > div img.bigger { /* I have separated the images into 4 types. The small ones (without any
+                                         special class, font-size: 1em), .bigger (font-size: 1.25em) ... */
+    font-size: 1.25em;
+}
+
+section.characters > div img.big { /* ... .big (font-size: 1.5em) ... */
+    font-size: 1.5em;
+}
+
+section.characters > div img.main { /* ... and one .main (font-size: 1.75em). Setting sizes directly would also
+                                       work of course. */
+    font-size: 1.75em;
+}
+
+
+
+
+
+
+
+
+
+
+/* RATINGS SECTION */
+section.ratings > div {
+    display: flex;
+    justify-content: space-around;
+}
+
+section.ratings .rating {
+    height: 25em;
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    text-align: center;
+}
+
+section.ratings .rating .percent {
+    font-size: 2em;
+}
+
+section.ratings .rating .source {
+    font-size: 1.2em;
+    padding: 0.5em;
+}
+
+section.ratings .rating .bar {
+    font-size: 2em;
+    background-color: rgba(0,0,0, 0.25); /* I created the background color of the bars just by darkening the
+                                              background below. This is because originally I wanted to add a 
+                                              background image below that but then I decided to make it easier.
+                                              Setting simple grayish color here is fine. */
+}
+
+
+
+
+
+
+
+
+
+
+/* CAST SECTION */
+section.cast .main {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 1em;
+}
+
+section.cast .main img {
+    width: 10em;
+    margin-right: 1em;
+}
+
+section.cast .main p {
+    line-height: 1.5em;
+}
+
+section.cast .others {
+    display: flex;
+    justify-content: space-between;
+}
+
+section.cast .others .person {
+    margin-right: 0.25em;
+    position: relative;
+}
+
+section.cast .others .person img {
+    width: 7em;
+}
+
+section.cast .others .person .name {
+    position: absolute; /* the name is absolutely positioned within it's nearest ancestor that has position
+                           absolute or relative, which is section.cast .others .person */
+    bottom: 0; /* it is positioned at the bottom of it */
+    width: 100%; /* it spans it's entire width */
+    padding: 0.25em 0;
+    background: rgba(0,0,0, 0.5); /* it's background is half-transparent black */
+    color: white;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+/* GALLERY SECTION */
+/* ok, here must be said that this solution is not very functional. It looks as it should but having a gallery
+image as a background-image is wrong as it will be mostly ignored by search engine robots and other devices.
+The thing is that making this look as it should while keeping the right HTML structure and gallery-like behaviour
+would require the use of JavaScript or some advanced CSS creativity that would be hard to explain at this point. */
+section.gallery {
+    padding-left: 0; /* I don't want padding to influence the positioning of the buttons so I remove it */
+    padding-right: 0;
+}
+
+section.gallery > div { /* the content div behaves differently here */
+    width: auto; /* just to negate the 50em width that was set before */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 30em; /* not ideal, should be changed based on the image within, but for simplicity I wen with this */
+    background: transparent url('../img/gallery.jpg') center center/cover no-repeat scroll;    
+    padding: 0 1em;
+}
+
+section.gallery .left,
+section.gallery .right { /* both buttons share the same style. They are set apart by flexbox above. */
+    display: block;
+    font-size: 2em;
+    width: 2em;
+    height: 2em;
+    padding: 0.5em 0;
+    text-align: center;
+    background-color: rgba(0,0,0, 0.5);
+    color: white;
+    text-decoration: none;
+}

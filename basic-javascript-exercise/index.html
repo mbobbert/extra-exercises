@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Facebook</title>
+</head>
+<body>
+
+    <!-- HTML
+        1. create 4 p's with 4 names
+        2. create 4 buttons with 'more info' with an id
+        3. create 4 empty div's with an id
+        CSS
+        1. create flexbox for 4 buttons
+
+        Javascript
+        1. add jquery script
+        2. create event listener for each button ( grabbing button), adding function immediately inside function() {}
+        3. inside the function, there should be an object with info on:
+            - name
+            - surname
+            - email
+            - main interest
+    -->
+
+    <p>Mireille Bobbert</p>
+    <button id='btn1'>More info</button>
+    <div id="insertText1"></div>
+
+    <p>Francis Bob</p>
+    <button id='btn2'>More info</button>
+    <div id="insertText2"></div>
+
+    <p>Robert D</p>
+    <button id='btn3'>More info</button>
+    <div id="insertText3"></div>
+
+    <p>Zayn S</p>
+    <button id='btn4'>More info</button>
+    <div id="insertText4"></div>
+
+    <script src="jquery-3.3.1.min.js"></script>
+    <script>
+        $('#btn1').click(performFunction);
+
+        function performFunction() {
+            $('#insertText1').html(mireille_text);
+            };
+
+        function mireille_text() {
+
+            var mireille = [ "name: Mireille", "surname: Bobbert", "hobbies: blogging"];
+
+            for (var i = 0; i < mireille.length; i++ ) {
+
+            return (mireille);
+                console.log(mireille);
+            };
+        };
+
+
+        $('#btn2').click(performFunction)
+
+        function performFunction() {
+            $('#insertText2').html(francis_text);
+        };
+
+        function francis_text() {
+
+            var francis = {
+                name: "Francis",
+                surname: "Bob",
+                email: "fb@hello.com",
+                hobbies: "motorcycling"
+            };
+
+            $.each(francis,function (key, value ){
+                console.log(key + ": " + value );
+            });
+
+        };
+
+        $('#btn3').click(performFunction);
+
+        function performFunction() {
+         $('#insertText3').html(robert_text);
+        };
+
+        function robert_text() {
+
+            var robert = {
+                name: "Robert",
+                surname: "D",
+                email: "fb@hello.com",
+                hobbies: "motorcycling"
+            };
+
+        Object.keys(robert).forEach(function(key) {
+            console.log(key, robert[key]);
+        });
+
+    };
+
+
+
+        //$('#btn3').click(function() {
+            //$('#insertText3').html(robert_text);
+//
+            //function robert_text() {
+//
+//
+                //var robert = {
+                    //name: "Robert",
+                    //surname: "D",
+                    //email: "rd@hello.com",
+                    //hobbies: "cooking"
+                //};
+//
+                //$.each(robert,function (key, value ){
+                   //$('#insertText3').html(key + ": " + value );
+                //});
+            //}
+        //});
+
+    </script>
+
+<!--
+var Mireille = {
+    name: "Mireille",
+    surname: "Bobbert",
+    email: "mireille.bobbert@hello.com",
+    hobbies: "blogging, horseback riding",
+}
+return Mireille;
+}
+-->
+</body>
+</html>
